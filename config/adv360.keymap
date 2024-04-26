@@ -34,6 +34,16 @@
     };
   };
 
+      // Home row mods
+    #define _A_SFT &hm LSHFT A  // Shift on index fingers
+    #define _SEMI_SFT &hm RSHFT SEMI
+    #define _S_CMD &hm LGUI S   // Command on ring fingers
+    #define _E_CMD &hm RGUI L
+    #define _R_OPT &hm LALT D   // Option on middle finger
+    #define _I_OPT &hm RALT K
+    #define _D_CTL &hm LCTRL F  // Control on index finger
+    #define _H_CTL &hm RCTRL J
+
     keymap {
         compatible = "zmk,keymap";
 
