@@ -42,26 +42,6 @@
           flavor = "tap-preferred";
           bindings = <&kp>, <&kp>;
       };
-
-    layer_r: layer_right_mods {
-          compatible = "zmk,behavior-hold-tap";
-          label = "HOMEROW_MODS";
-          #binding-cells = <2>;
-          tapping-term-ms = <500>;
-          quick_tap_ms = <250>;
-          flavor = "tap-preferred";
-          bindings = <&kp>, <&tog>;
-      };
-
-    layer_l: layer_left_mods {
-          compatible = "zmk,behavior-hold-tap";
-          label = "HOMEROW_MODS";
-          #binding-cells = <2>;
-          tapping-term-ms = <500>;
-          quick_tap_ms = <450>;
-          flavor = "tap-preferred";
-          bindings = <&kp>, <&tog>;
-      };
     };
 
       // Home row mods
@@ -73,9 +53,6 @@
     #define _K_OPT &hm_r RALT K
     #define _F_CTL &hm_l LSHFT F  // Control on index finger
     #define _J_CTL &hm_r RSHFT J
-
-    #define _H_L1 &layer_r H 1
-    #define _G_L1 &layer_l G 2
 
     keymap {
         compatible = "zmk,keymap";
