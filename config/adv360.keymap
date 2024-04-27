@@ -42,11 +42,27 @@
         flavor = "tap-preferred";
         bindings = <&kp>, <&kp>;
     };
+
+    cm_l: code_mods_left {
+        compatible = "zmk,behavior-mod-morph";
+        #binding-cells = <0>;
+        bindings = <&kp>, <&kp>;
+        mods = <(RGUI)>;
+        #keep-mods = <()>;
+    };
+
+    cm_r: code_mods_left {
+        compatible = "zmk,behavior-mod-morph";
+        #binding-cells = <0>;
+        bindings = <&kp>, <&kp>;
+        mods = <(LGUI)>;
+        #keep-mods = <()>;
+    };
   };
 
       // Home row mods
     #define _A_SFT &hm_l LSHFT A  // Shift on index fingers
-    #define _SEMI_SFT &hm_r RSHFT SEMI
+    #define _P_SFT &hm_r RSHFT P
     #define _S_CMD &hm_l LGUI S   // Command on ring fingers
     #define _L_CMD &hm_r RGUI L
     #define _D_OPT &hm_l LALT D   // Option on middle finger
@@ -54,16 +70,23 @@
     #define _F_CTL &hm_l LCTRL F  // Control on index finger
     #define _J_CTL &hm_r RCTRL J
 
+    // Code mods
+    #define _W_LBRACE &cm_l W LBRC
+    #define _O_RBRACE &cm_r O RBRC
+
+    #define _E_LPAR &cm_l E LPAR
+    #define _I_RPAR &cm_r I RPAR
+
     keymap {
         compatible = "zmk,keymap";
 
 
         default_layer {
             bindings = <
- &kp EQUAL     &kp N1    &kp N2    &kp N3     &kp N4  &kp N5              &tog 1                                                                 &mo 3  &kp N6  &kp N7     &kp N8    &kp N9    &kp N0  &kp MINUS
-   &kp TAB      &kp Q     &kp W     &kp E      &kp R   &kp T               &none                                                                 &none   &kp Y   &kp U      &kp I     &kp O  &kp SEMI   &kp BSLH
-   &kp ESC      _A_SFT    _S_CMD  _D_OPT  _F_CTL   &kp G               &none  &kp LGUI  &kp LCTRL                   &kp RALT   &kp RGUI      &none   &kp H   _J_CTL      _K_OPT     _L_CMD     &kp P    &kp SQT
- &kp LSHFT      &kp Z     &kp X     &kp C      &kp V   &kp B                                 &kp HOME                  &kp PG_UP                         &kp N   &kp M  &kp COMMA   &kp DOT  &kp FSLH  &kp RSHFT
+ &kp ESC     &kp N1    &kp N2    &kp N3     &kp N4  &kp N5              &tog 1                                                                 &mo 3  &kp N6  &kp N7     &kp N8    &kp N9    &kp N0  &kp MINUS
+   &kp LSHFT      &kp Q     _W_LBRACE     _E_LPAR      &kp R   &kp T               &none                                                                 &none   &kp Y   &kp U      _I_RPAR     _O_RBRACE  &kp SEMI   &kp BSLH
+   &kp TAB      _A_SFT    _S_CMD  _D_OPT  _F_CTL   &kp G               &none  &kp LGUI  &kp LCTRL                   &kp RALT   &kp RGUI      &none   &kp H   _J_CTL      _K_OPT     _L_CMD     &kp _P_SFT    &kp SQT
+ &kp EQUAL      &kp Z     &kp X     &kp C      &kp V   &kp B                                 &kp HOME                  &kp PG_UP                         &kp N   &kp M  &kp COMMA   &kp DOT  &kp FSLH  &kp RSHFT
      &mo 2  &kp GRAVE  &kp CAPS  &kp LEFT  &kp RIGHT                    &kp BSPC   &kp DEL    &kp END                  &kp PG_DN  &kp ENTER  &kp SPACE          &kp UP   &kp DOWN  &kp LBKT  &kp RBKT      &mo 2
             >;
         };
