@@ -20,45 +20,45 @@
 
 / {
   behaviors {
-    #include "macros.dtsi"
-    #include "version.dtsi"
+      #include "macros.dtsi"
+      #include "version.dtsi"
 
-    hm_l: homerow_left_mods {
-        compatible = "zmk,behavior-hold-tap";
-        label = "HOMEROW_MODS";
-        #binding-cells = <2>;
-        tapping-term-ms = <250>;
-        quick_tap_ms = <200>;
-        flavor = "tap-preferred";
-        bindings = <&kp>, <&kp>;
-    };
+      hm_l: homerow_left_mods {
+          compatible = "zmk,behavior-hold-tap";
+          label = "HOMEROW_MODS";
+          #binding-cells = <2>;
+          tapping-term-ms = <250>;
+          quick_tap_ms = <200>;
+          flavor = "tap-preferred";
+          bindings = <&kp>, <&kp>;
+      };
 
-    hm_r: homerow_right_mods {
-        compatible = "zmk,behavior-hold-tap";
-        label = "HOMEROW_MODS";
-        #binding-cells = <2>;
-        tapping-term-ms = <250>;
-        quick_tap_ms = <200>;
-        flavor = "tap-preferred";
-        bindings = <&kp>, <&kp>;
-    };
+      hm_r: homerow_right_mods {
+          compatible = "zmk,behavior-hold-tap";
+          label = "HOMEROW_MODS";
+          #binding-cells = <2>;
+          tapping-term-ms = <250>;
+          quick_tap_ms = <200>;
+          flavor = "tap-preferred";
+          bindings = <&kp>, <&kp>;
+      };
 
-    cm_l: code_mods_left {
-        compatible = "zmk,behavior-mod-morph";
-        #binding-cells = <0>;
-        bindings = <&kp>, <&kp>;
-        mods = <(RGUI)>;
-        // keep-mods = <0>;
-    };
+      cm_l: code_mods_left {
+          compatible = "zmk,behavior-mod-morph";
+          #binding-cells = <2>;
+          bindings = <&kp>, <&kp>;
+          mods = <(RGUI)>;
+          // keep-mods = <0>;
+      };
 
-    cm_r: code_mods_right {
-        compatible = "zmk,behavior-mod-morph";
-        #binding-cells = <0>;
-        bindings = <&kp>, <&kp>;
-        mods = <(LGUI)>;
-        // keep-mods = <0>;
+      cm_r: code_mods_right {
+          compatible = "zmk,behavior-mod-morph";
+          #binding-cells = <2>;
+          bindings = <&kp>, <&kp>;
+          mods = <(LGUI)>;
+          // keep-mods = <0>;
+      };
     };
-  };
 
       // Home row mods
     #define _A_SFT &hm_l LSHFT A  // Shift on index fingers
