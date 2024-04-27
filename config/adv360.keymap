@@ -19,11 +19,11 @@
 #include <dt-bindings/zmk/backlight.h>
 
 / {
-  behaviors {
-      #include "macros.dtsi"
-      #include "version.dtsi"
+    behaviors {
+        #include "macros.dtsi"
+        #include "version.dtsi"
 
-      hm_l: homerow_left_mods {
+        hm_l: homerow_left_mods {
           compatible = "zmk,behavior-hold-tap";
           label = "HOMEROW_MODS";
           #binding-cells = <2>;
@@ -31,34 +31,50 @@
           quick_tap_ms = <200>;
           flavor = "tap-preferred";
           bindings = <&kp>, <&kp>;
-      };
-
-      hm_r: homerow_right_mods {
-          compatible = "zmk,behavior-hold-tap";
-          label = "HOMEROW_MODS";
-          #binding-cells = <2>;
-          tapping-term-ms = <250>;
-          quick_tap_ms = <200>;
-          flavor = "tap-preferred";
-          bindings = <&kp>, <&kp>;
-      };
         };
 
+        hm_r: homerow_right_mods {
+          compatible = "zmk,behavior-hold-tap";
+          label = "HOMEROW_MODS";
+          #binding-cells = <2>;
+          tapping-term-ms = <250>;
+          quick_tap_ms = <200>;
+          flavor = "tap-preferred";
+          bindings = <&kp>, <&kp>;
+        };
+
+        &lt {
+          tapping-term-ms = <500>;
+        };
+  };
+    
+    #define DEFAULT 0
+    #define CODE 1
+
     // Home row mods
-    #define _A_SFT &hm_l LCTRL A  // Shift on pinkey fingers
-    #define _P_SFT &hm_r RCTRL  P
+    #define _A_CTL &hm_l LCTRL A  // Shift on pinkey fingers
+    #define _P_CTL &hm_r RCTRL  P
     #define _S_CMD &hm_l LGUI S   // Command on ring fingers
     #define _L_CMD &hm_r RGUI L
     #define _D_OPT &hm_l LALT D   // Option on middle finger
     #define _K_OPT &hm_r RALT K
-    #define _F_CTL &hm_l LSHFT F  // Control on index finger
-    #define _J_CTL &hm_r RSHFT J
+    #define _F_SFT &hm_l LSHFT F  // Control on index finger
+    #define _J_SFT &hm_r RSHFT J
 
-    &lt {
-        tapping-term-ms = <500>;
-    };
+    #define _LBKT_CTL &hm_l LCTRL LBKT  // Shift on pinkey fingers
+    #define _RIGHT_CTL &hm_r RCTRL RIGHT
+    #define _RBKT_CMD &hm_l LGUI RBKT   // Command on ring fingers
+    #define _DOWN_CMD &hm_r RGUI DOWN
+    #define _LBRC_OPT &hm_l LALT LBRC   // Option on middle finger
+    #define _UP_OPT &hm_r RALT UP
+    #define _RBRC_SFT &hm_l LSHFT RBRC  // Control on index finger
+    #define _LEFT_SFT &hm_r RSHFT LEFT
 
-    #define _G_LAYER_1 &lt 1 G
+    #define _G_LAYER_1 &lt CODE G
+    #define _GRAVE_LAYER_0 &lt DEFAULT GRAVE
+
+    #define _H_LAYER_1 &lt CODE H
+    #define _UNDER_LAYER_0 &lt DEFAULT UNDER
 
 
     keymap {
@@ -69,7 +85,7 @@
             bindings = <
  &kp ESC     &kp N1    &kp N2    &kp N3     &kp N4  &kp N5              &tog 1                                                                 &mo 3  &kp N6  &kp N7     &kp N8    &kp N9    &kp N0  &kp MINUS
    &kp LSHFT      &kp Q     &kp W     &kp E      &kp R   &kp T               &none                                                                 &none   &kp Y   &kp U   &kp I     &kp O  &kp SEMI   &kp BSLH
-   &kp TAB      _A_SFT    _S_CMD  _D_OPT  _F_CTL   _G_LAYER_1               &none  &kp LGUI  &kp LCTRL                   &kp RALT   &kp RGUI      &none   &kp H   _J_CTL      _K_OPT     _L_CMD     _P_SFT    &kp SQT
+   &kp TAB      _A_CTL    _S_CMD  _D_OPT  _F_SFT   _G_LAYER_1               &none  &kp LGUI  &kp LCTRL                   &kp RALT   &kp RGUI      &none   _H_LAYER_1   _J_SFT      _K_OPT     _L_CMD     _P_CTL    &kp SQT
  &kp EQUAL      &kp Z     &kp X     &kp C      &kp V   &kp B                                 &kp HOME                  &kp PG_UP                         &kp N   &kp M  &kp COMMA   &kp DOT  &kp FSLH  &kp RSHFT
      &mo 2  &kp GRAVE  &kp CAPS  &kp LEFT  &kp RIGHT                    &kp BSPC   &kp DEL    &kp END                  &kp PG_DN  &kp ENTER  &kp SPACE          &kp UP   &kp DOWN  &kp LBKT  &kp RBKT      &mo 2
             >;
@@ -77,10 +93,10 @@
 
         layer_code {
             bindings = <
- &none   &none    &none     &none       &none      &none              &trans                                                                 &none   &none    &none     &none       &none      &none    &none 
-   &none   &kp PLUS    &kp MINUS  &kp LPAR   &kp RPAR   &kp EQUAL               &none                                                                 &none   &kp CARET    &kp PG_UP      &kp PG_DN       &kp STAR      &kp BSLH    &none 
-   &kp ESC      &kp LBKT     &kp RBKT   &kp LBRC   &kp RBRC   &none               &none  &kp LCTRL  &kp LALT                   &kp LGUI  &kp RCTRL      &none   &none   &kp LEFT     &kp UP      &kp DOWN      &kp RIGHT    &none
- &kp LSHFT      &kp EXCL    &kp AT_SIGN     &kp POUND    &kp DLLR     &kp PERCENT              &kp HOME                &kp PG_UP                         &none       &kp FSLH        &kp COMMA      &kp DOT      &kp FSLH    &none
+    &none   &none   &none   &none    &none    &none             &trans                                                                 &none   &none    &none     &none       &none      &none    &none 
+   &none   &kp PLUS  &kp MINUS   &kp LPAR   &kp RPAR   &kp EQUAL   &none                                                                 &none   &kp CARET    &kp PG_UP      &kp PG_DN       &kp STAR      &kp BSLH    &none 
+   &kp ESC   _LBKT_CTL   _RBKT_CMD   _LBRC_OPT   _RBRC_SFT   _GRAVE_LAYER_0  &none  &kp LCTRL  &kp LALT                &kp LGUI  &kp RCTRL    _UNDER_LAYER_0    _LEFT_SFT     _UP_OPT      _DOWN_CMD      _RIGHT_CTL   &none
+    &kp LSHFT   &kp EXCL   &kp AT_SIGN   &kp POUND    &kp DLLR    &kp PERCENT                 &kp HOME                 &kp PG_UP                         &none    &kp FSLH     &kp COMMA    &kp DOT   &kp FSLH   &none
      &mo 2  &none   &none    &none     &none                            &kp BSPC    &kp DEL   &kp END                  &kp PG_DN  &kp ENTER  &kp SPACE              &none      &none     &none         &none     &mo 2
             >;
         };
