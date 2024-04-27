@@ -73,14 +73,14 @@
     };
 
       // Home row mods
-    #define _A_SFT &hm_l LSHFT A  // Shift on pinkey fingers
-    #define _P_SFT &hm_r RSHFT P
+    #define _A_SFT &hm_l LCTRL A  // Shift on pinkey fingers
+    #define _P_SFT &hm_r RCTRL  P
     #define _S_CMD &hm_l LGUI S   // Command on ring fingers
     #define _L_CMD &hm_r RGUI L
     #define _D_OPT &hm_l LALT D   // Option on middle finger
     #define _K_OPT &hm_r RALT K
-    #define _F_CTL &hm_l LCTRL F  // Control on index finger
-    #define _J_CTL &hm_r RCTRL J
+    #define _F_CTL &hm_l LSHFT F  // Control on index finger
+    #define _J_CTL &hm_r RSHFT J
 
     // Code mods
     #define _W_LBRACE &cm_lbrc
@@ -103,6 +103,16 @@
             >;
         };
 
+        layer_code {
+            bindings = <
+ &none   &none    &none     &none       &none      &none              &trans                                                                 &none   &none    &none     &none       &none      &none    &none 
+   &none   &none    &none     &kp LPAR   &kp RPAR   &none               &none                                                                 &none   &none    &none     &none       &none      &none    &none 
+   &kp ESC      &kp LBKT     &kp RBKT   &kp LBRC   &kp RBRC   &none               &none  &kp LCTRL  &kp LALT                   &kp LGUI  &kp RCTRL      &none   &none   &kp LEFT     &kp UP      &kp DOWN      &kp RIGHT    &none
+ &kp LSHFT      &none   &none    &none     &none       &none                                 &kp HOME                  &kp PG_UP                         &none       &none        &none      &none      &none    &none
+     &mo 2  &none   &none    &none     &none                            &kp BSPC    &kp DEL   &kp END                  &kp PG_DN  &kp ENTER  &kp KP_N0              &none      &none     &none         &none     &mo 2
+            >;
+        };
+
         layer_keypad {
             bindings = <
  &kp EQUAL     &kp N1    &kp N2    &kp N3     &kp N4  &kp N5              &trans                                                                 &mo 3  &kp N6  &kp KP_NUM  &kp KP_EQUAL  &kp KP_DIVIDE  &kp KP_MULTIPLY  &kp MINUS
@@ -112,6 +122,7 @@
      &mo 2  &kp GRAVE  &kp CAPS  &kp LEFT  &kp RIGHT                    &kp BSPC    &kp DEL   &kp END                  &kp PG_DN  &kp ENTER  &kp KP_N0              &kp UP      &kp DOWN     &kp KP_DOT         &kp RBKT      &mo 2
             >;
         };
+
 
         layer_fn {
             bindings = <
