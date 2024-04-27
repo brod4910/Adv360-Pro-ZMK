@@ -48,7 +48,6 @@
         #binding-cells = <0>;
         bindings = <&kp>, <&kp>;
         mods = <(RGUI)>;
-        #keep-mods = <()>;
     };
 
     cm_r: code_mods_left {
@@ -56,7 +55,6 @@
         #binding-cells = <0>;
         bindings = <&kp>, <&kp>;
         mods = <(LGUI)>;
-        #keep-mods = <()>;
     };
   };
 
