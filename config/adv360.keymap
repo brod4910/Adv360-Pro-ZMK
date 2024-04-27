@@ -45,18 +45,18 @@
 
     cm_l: code_mods_left {
         compatible = "zmk,behavior-mod-morph";
-        #binding-cells = <0>;
+        #binding-cells = <2>;
         bindings = <&kp>, <&kp>;
         mods = <(RGUI)>;
-        keep-mods = 0;
+        // keep-mods = <0>;
     };
 
     cm_r: code_mods_right {
         compatible = "zmk,behavior-mod-morph";
-        #binding-cells = <0>;
+        #binding-cells = <2>;
         bindings = <&kp>, <&kp>;
         mods = <(LGUI)>;
-        keep-mods = 0;
+        // keep-mods = <0>;
     };
   };
 
