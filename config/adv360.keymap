@@ -48,13 +48,15 @@
         #binding-cells = <0>;
         bindings = <&kp>, <&kp>;
         mods = <(RGUI)>;
+        keep-mods = 0;
     };
 
-    cm_r: code_mods_left {
+    cm_r: code_mods_right {
         compatible = "zmk,behavior-mod-morph";
         #binding-cells = <0>;
         bindings = <&kp>, <&kp>;
         mods = <(LGUI)>;
+        keep-mods = 0;
     };
   };
 
