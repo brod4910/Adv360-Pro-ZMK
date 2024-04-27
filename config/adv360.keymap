@@ -51,8 +51,16 @@
           bindings = <&kp>, <&kp>;
         };
 
-
-  };
+        layer_tap: layer_t {
+          compatible = "zmk,behavior-hold-tap";
+          label = "LAYERTAP";
+          #binding-cells = <2>;
+          tapping-term-ms = <400>;
+          quick_tap_ms = <350>;
+          flavor = "tap-preferred";
+          bindings = <&kp>, <&tog>;
+        };
+    };
 
 
     // Home row mods
@@ -74,11 +82,11 @@
     #define _RBRC_SFT &hm_l LSHFT RBRC  // Control on index finger
     #define _LEFT_SFT &hm_r RSHFT LEFT
 
-    #define _G_LAYER_1 &lt CODE G
-    #define _GRAVE_LAYER_0 &lt DEFAULT GRAVE
+    #define _G_LAYER_1 &layer_t G CODE
+    #define _GRAVE_LAYER_0 &layer_t GRAVE DEFAULT
 
-    #define _H_LAYER_1 &lt CODE H
-    #define _UNDER_LAYER_0 &lt DEFAULT UNDER
+    #define _H_LAYER_1 &layer_t H CODE
+    #define _UNDER_LAYER_0 &layer_t UNDER DEFAULT
 
 
     keymap {
@@ -98,8 +106,8 @@
         layer_code {
             bindings = <
     &none   &none   &none   &none    &none    &none             &trans                                                                 &none   &none    &none     &none       &none      &none    &none 
-   &kp CAPS   &kp PLUS  &kp MINUS   &kp LPAR   &kp RPAR   &kp EQUAL   &none                                                                 &none   &kp CARET    &kp PG_UP      &kp PG_DN       &kp STAR      &kp BSLH    &none 
-   &kp TAB   _LBKT_CTL   _RBKT_CMD   _LBRC_OPT   _RBRC_SFT   _GRAVE_LAYER_0  &none  &kp LCTRL  &kp LALT                &kp LGUI  &kp RCTRL    _UNDER_LAYER_0    _LEFT_SFT     _UP_OPT      _DOWN_CMD      _RIGHT_CTL   &none
+   &kp CAPS   &kp PLUS  &kp MINUS   &kp LPAR   &kp RPAR   &kp EQUAL   $none                                                                 &none   &kp CARET    &kp PG_UP      &kp PG_DN       &kp STAR      &kp BSLH    &none 
+   &kp TAB   _LBKT_CTL   _RBKT_CMD   _LBRC_OPT   _RBRC_SFT   _GRAVE_LAYER_0  &none  &kp LCTRL  &kp LALT                &kp LGUI  &kp RCTRL    &none _UNDER_LAYER_0    _LEFT_SFT     _UP_OPT      _DOWN_CMD      _RIGHT_CTL   &none
     &kp ESC   &kp EXCL   &kp AT_SIGN   &kp POUND    &kp DLLR    &kp PERCENT                 &kp HOME                 &kp PG_UP                         &none    &kp FSLH     &kp COMMA    &kp DOT   &kp FSLH   &none
      &mo 2  &none   &none    &none     &none                            &kp BSPC    &kp DEL   &kp END                  &kp PG_DN  &kp ENTER  &kp SPACE              &none      &none     &none         &none     &mo 2
             >;
