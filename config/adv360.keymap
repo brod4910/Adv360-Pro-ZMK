@@ -43,32 +43,24 @@
           bindings = <&kp>, <&kp>;
       };
 
-      cm_lbrc: code_mods_left_brc {
-          compatible = "zmk,behavior-mod-morph";
-          #binding-cells = <0>;
-          bindings = <&kp W>, <&kp LBRC>;
-          mods = <(RGUI)>;
+    layer_r: layer_right_mods {
+          compatible = "zmk,behavior-hold-tap";
+          label = "HOMEROW_MODS";
+          #binding-cells = <2>;
+          tapping-term-ms = <500>;
+          quick_tap_ms = <250>;
+          flavor = "tap-preferred";
+          bindings = <&kp>, <&tog>;
       };
 
-      cm_rbrc: code_mods_right_brc {
-          compatible = "zmk,behavior-mod-morph";
-          #binding-cells = <0>;
-          bindings = <&kp O>, <&kp RBRC>;
-          mods = <(LGUI)>;
-      };
-
-      cm_lpar: code_mods_left_par {
-          compatible = "zmk,behavior-mod-morph";
-          #binding-cells = <0>;
-          bindings = <&kp E>, <&kp LPAR>;
-          mods = <(RGUI)>;
-      };
-
-      cm_rpar: code_mods_right_par {
-          compatible = "zmk,behavior-mod-morph";
-          #binding-cells = <0>;
-          bindings = <&kp I>, <&kp RPAR>;
-          mods = <(LGUI)>;
+    layer_l: layer_left_mods {
+          compatible = "zmk,behavior-hold-tap";
+          label = "HOMEROW_MODS";
+          #binding-cells = <2>;
+          tapping-term-ms = <500>;
+          quick_tap_ms = <450>;
+          flavor = "tap-preferred";
+          bindings = <&kp>, <&tog>;
       };
     };
 
@@ -82,13 +74,8 @@
     #define _F_CTL &hm_l LSHFT F  // Control on index finger
     #define _J_CTL &hm_r RSHFT J
 
-
-    // Code mods
-    #define _W_LBRACE &cm_lbrc
-    #define _O_RBRACE &cm_rbrc
-
-    #define _E_LPAR &cm_lpar
-    #define _I_RPAR &cm_rpar
+    #define _H_L1 &layer_r H 1
+    #define _H_L1 &layer_r G 2
 
     keymap {
         compatible = "zmk,keymap";
@@ -107,7 +94,7 @@
         layer_code {
             bindings = <
  &none   &none    &none     &none       &none      &none              &trans                                                                 &none   &none    &none     &none       &none      &none    &none 
-   &none   &PLUS    &MINUS  &kp LPAR   &kp RPAR   &EQUAL               &none                                                                 &none   &kp CARET    &kp PG_UP      &PG_DN       &kp STAR      &kp BSLH    &none 
+   &none   &kp PLUS    &kp MINUS  &kp LPAR   &kp RPAR   &kp EQUAL               &none                                                                 &none   &kp CARET    &kp PG_UP      &kp PG_DN       &kp STAR      &kp BSLH    &none 
    &kp ESC      &kp LBKT     &kp RBKT   &kp LBRC   &kp RBRC   &none               &none  &kp LCTRL  &kp LALT                   &kp LGUI  &kp RCTRL      &none   &none   &kp LEFT     &kp UP      &kp DOWN      &kp RIGHT    &none
  &kp LSHFT      &kp EXCL    &kp AT_SIGN     &kp POUND    &kp DLLR     &kp PERCENT              &kp HOME                &kp PG_UP                         &none       &kp FSLH        &kp COMMA      &kp DOT      &kp FSLH    &none
      &mo 2  &none   &none    &none     &none                            &kp BSPC    &kp DEL   &kp END                  &kp PG_DN  &kp ENTER  &kp SPACE              &none      &none     &none         &none     &mo 2
