@@ -43,20 +43,32 @@
           bindings = <&kp>, <&kp>;
       };
 
-      cm_l: code_mods_left {
+      cm_lbrc: code_mods_left_brc {
           compatible = "zmk,behavior-mod-morph";
           #binding-cells = <2>;
-          bindings = <&kp>, <&kp>;
+          bindings = <&kp W>, <&kp LBRC>;
           mods = <(RGUI)>;
-          // keep-mods = <0>;
       };
 
-      cm_r: code_mods_right {
+      cm_rbrc: code_mods_right_brc {
           compatible = "zmk,behavior-mod-morph";
           #binding-cells = <2>;
-          bindings = <&kp>, <&kp>;
+          bindings = <&kp O>, <&kp RBRC>;
           mods = <(LGUI)>;
-          // keep-mods = <0>;
+      };
+
+      cm_lpar: code_mods_left_par {
+          compatible = "zmk,behavior-mod-morph";
+          #binding-cells = <2>;
+          bindings = <&kp E>, <&kp LPAR>;
+          mods = <(RGUI)>;
+      };
+
+      cm_rpar: code_mods_right_par {
+          compatible = "zmk,behavior-mod-morph";
+          #binding-cells = <2>;
+          bindings = <&kp I>, <&kp RPAR>;
+          mods = <(LGUI)>;
       };
     };
 
@@ -71,11 +83,11 @@
     #define _J_CTL &hm_r RCTRL J
 
     // Code mods
-    #define _W_LBRACE &cm_l W LBRC
-    #define _O_RBRACE &cm_r O RBRC
+    #define _W_LBRACE &cm_lbrc
+    #define _O_RBRACE &cm_rbrc
 
-    #define _E_LPAR &cm_l E LPAR
-    #define _I_RPAR &cm_r I RPAR
+    #define _E_LPAR &cm_lpar
+    #define _I_RPAR &cm_rpar
 
     keymap {
         compatible = "zmk,keymap";
