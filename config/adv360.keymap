@@ -55,8 +55,8 @@
           compatible = "zmk,behavior-hold-tap";
           label = "LAYERTAP";
           #binding-cells = <2>;
-          tapping-term-ms = <400>;
-          quick_tap_ms = <350>;
+          tapping-term-ms = <500>;
+          quick_tap_ms = <450>;
           flavor = "tap-preferred";
           bindings = <&kp>, <&tog>;
         };
@@ -82,11 +82,11 @@
     #define _RBRC_SFT &hm_l LSHFT RBRC  // Control on index finger
     #define _LEFT_SFT &hm_r RSHFT LEFT
 
-    #define _G_LAYER_1 &lt_kp G CODE
-    #define _GRAVE_LAYER_0 &lt_kp GRAVE DEFAULT
+    #define _G_LAYER_1 &lt_kp CODE G
+    #define _GRAVE_LAYER_0 &lt_kp CODE GRAVE
 
-    #define _H_LAYER_1 &lt_kp H CODE
-    #define _UNDER_LAYER_0 &lt_kp UNDER DEFAULT
+    #define _H_LAYER_1 &lt_kp CODE H
+    #define _UNDER_LAYER_0 &lt_kp CODE UNDER
 
 
     keymap {
