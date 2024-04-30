@@ -23,7 +23,7 @@
 #define CODE 1
 #define KEYPAD 2
 #define FN 3
-#DEFINE MOD 4
+#define MOD 4
         
 / {
     behaviors {
