@@ -92,7 +92,7 @@
     #define _LEFT_SFT &hm_r RSHFT LEFT
 
     #define _D_LAYER_1 &lt_kp CODE D
-    #define _GRAVE_LAYER_0 &lt_kp CODE GRAVE
+    #define _KP_LAYER_0 &lt_kp CODE KP_MINUS
 
     #define _H_LAYER_1 &lt_kp CODE H
     #define _UNDER_LAYER_0 &lt_kp CODE UNDER
@@ -108,21 +108,21 @@
 
         default_layer {
             bindings = <
- &kp EQUAL     &kp N1    &kp N2    &kp N3     &kp N4  &kp N5              &tog CODE                                                                 &mo MOD  &kp N6  &kp N7     &kp N8    &kp N9    &kp N0  &kp MINUS
-   &kp CAPS      &kp Q     &kp W     &kp F      &kp P   &kp G               &none                                                                 &none   &kp J   &kp L   &kp U     &kp Y  &kp SEMI   &kp BSLH
-   &kp TAB      _A_CTL    _R_CMD  _S_OPT  _T_SFT   _D_LAYER_1               &none  &kp LGUI  &kp LCTRL                   &kp RALT   &kp RGUI      &none   _H_LAYER_1   _N_SFT      _E_OPT     _I_CMD     _O_CTL    &kp SQT
- &kp ESC      &kp Z     &kp X     &kp C      &kp V   &kp B                                 &kp HOME                  &kp PG_UP                         &kp K   &kp M  &kp COMMA   &kp DOT  &kp FSLH  &kp RSHFT
-     &mo FN  &kp GRAVE  _KEYPAD  &kp LEFT  &kp RIGHT                    &kp BSPC   &kp DEL    &kp END                  &kp PG_DN  &kp ENTER  &kp SPACE          &kp UP   &kp DOWN  &kp LBKT  &kp RBKT      &mo FN
+ &kp EQUAL  &kp EXCL  &kp AT_SIGN  &kp POUND  &kp DLLR  &kp PERCENT     &tog CODE                                                                 &mo MOD  &kp CARET  &kp AMPS &kp STAR &kp LPAR    &kp RPAR  &kp MINUS
+   &kp ESC   &kp Q     &kp W     &kp F      &kp P   &kp G           _KEYPAD                                                                 &none   &kp J   &kp L   &kp U     &kp Y  &kp SEMI   &kp BSLH
+   &kp SHIFT   _A_CTL    _R_CMD  _S_OPT  _T_SFT   _D_LAYER_1        &none       &kp LGUI   &kp LCTRL                   &kp RALT   &kp RGUI      &none   _H_LAYER_1   _N_SFT      _E_OPT     _I_CMD     _O_CTL    &kp SQT
+ &kp TAB      &kp Z     &kp X     &kp C      &kp V   &kp B                                 &kp HOME                   &kp PG_UP                         &kp K   &kp M  &kp COMMA   &kp DOT  &kp FSLH  &kp RSHFT
+     &mo FN  &kp GRAVE  _KEYPAD  &kp LEFT  &kp RIGHT                    &kp BSPC   &kp DEL  &kp END                 &kp PG_DN  &kp ENTER  &kp SPACE          &kp UP   &kp DOWN  &kp LBKT  &kp RBKT      &mo FN
             >;
         };
 
         layer_code {
             bindings = <
-    &none   &none   &none   &none    &none    &none             &trans                                                                 &mo MOD   &none    &none     &none       &none      &none    &none 
-   &kp CAPS   &kp PLUS  &kp MINUS   &kp LPAR   &kp RPAR   &kp EQUAL   &none                                                                 &none   &kp PG_UP    &kp PG_DN      &kp STAR       &kp BSLH      &none    &none 
-   &kp TAB   _LBKT_CTL   _RBKT_CMD   _LBRC_OPT   _RBRC_SFT   _GRAVE_LAYER_0  &none  &kp LCTRL  &kp LALT                &kp LGUI  &kp RCTRL    &none   _UNDER_LAYER_0    _LEFT_SFT     _UP_OPT      _DOWN_CMD      _RIGHT_CTL   &none
-    &kp ESC   &kp EXCL   &kp AT_SIGN   &kp POUND    &kp DLLR    &kp PERCENT                 &kp HOME                 &kp PG_UP                         &kp CARET    &kp FSLH     &kp COMMA    &kp DOT   &kp FSLH   &none
-     &mo FN  &none   _KEYPAD    &none     &none                            &kp BSPC    &kp DEL   &kp END                  &kp PG_DN  &kp ENTER  &kp SPACE              &none      &none     &none         &none     &mo FN
+    &trans   &trans   &trans   &trans    &trans    &trans                &trans                                                                     &mo MOD   &trans    &trans     &trans       &trans      &trans    &trans 
+   &trans   &trans  &kp LBKT  &kp AMPS   &kp RBKT   &kp KP_PLUS        _KEYPAD                                                                 &none   &kp KP_PLUS    &kp LBKT      &kp AMPS     &kp RBKT   &trans   &trans 
+   &trans   &kp KP_EQUAL   &kp LPAR   &kp COLON  &kp RPAR  _KP_LAYER_0    &none      &kp LCTRL  &kp LALT                &kp LGUI  &kp RCTRL      &none   &kp KP_MINUS  &kp LPAR     &kp COLON   &kp RPAR      &kp KP_EQUAL   &trans
+    &trans   &kp EXCL   &kp LBRC   &kp PIPE    &kp RBRC    &kp POUND                            &kp HOME                &kp PG_UP                         &kp POUND    &kp LBRC     &kp PIPE    &kp RBRC   &kp EXCL   &trans
+     &mo FN  &none   _KEYPAD    &none     &none                            &kp BSPC    &kp DEL   &kp END             &kp PG_DN  &kp ENTER  &kp SPACE     &trans      &trans     &trans         &trans     &mo FN
             >;
         };
 
