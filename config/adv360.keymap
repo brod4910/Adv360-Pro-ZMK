@@ -110,7 +110,7 @@
             bindings = <
  &kp EQUAL  &kp EXCL  &kp AT_SIGN  &kp POUND  &kp DLLR  &kp PERCENT     &tog CODE                                                                 &mo MOD  &kp CARET  &kp AMPS &kp STAR &kp LPAR    &kp RPAR  &kp MINUS
    &kp ESC   &kp Q     &kp W     &kp F      &kp P   &kp G           _KEYPAD                                                                 &none   &kp J   &kp L   &kp U     &kp Y  &kp SEMI   &kp BSLH
-   &kp SHIFT   _A_CTL    _R_CMD  _S_OPT  _T_SFT   _D_LAYER_1        &none       &kp LGUI   &kp LCTRL                   &kp RALT   &kp RGUI      &none   _H_LAYER_1   _N_SFT      _E_OPT     _I_CMD     _O_CTL    &kp SQT
+   &kp RSHFT   _A_CTL    _R_CMD  _S_OPT  _T_SFT   _D_LAYER_1        &none       &kp LGUI   &kp LCTRL                   &kp RALT   &kp RGUI      &none   _H_LAYER_1   _N_SFT      _E_OPT     _I_CMD     _O_CTL    &kp SQT
  &kp TAB      &kp Z     &kp X     &kp C      &kp V   &kp B                                 &kp HOME                   &kp PG_UP                         &kp K   &kp M  &kp COMMA   &kp DOT  &kp FSLH  &kp RSHFT
      &mo FN  &kp GRAVE  _KEYPAD  &kp LEFT  &kp RIGHT                    &kp BSPC   &kp DEL  &kp END                 &kp PG_DN  &kp ENTER  &kp SPACE          &kp UP   &kp DOWN  &kp LBKT  &kp RBKT      &mo FN
             >;
