@@ -126,7 +126,7 @@
      &mo FN  &none   _KEYPAD    &none     &none                            &kp BSPC    &kp DEL   &kp END             &kp PG_DN  &kp ENTER  &kp SPACE     &trans      &trans     &trans         &trans     &mo FN
             >;
         };
-qwertttqwertt
+
         layer_keypad {
             bindings = <
    &kp F1       &kp F2    &kp F3    &kp F4     &kp F5  &kp F6             &trans                                                                &mo MOD &kp F7        &kp F8        &kp F9         &kp F10       &kp F11         &kp F12
