@@ -98,6 +98,7 @@
     #define _UNDER_LAYER_0 &lt_kp CODE UNDER
 
     #define _KEYPAD &tog KEYPAD
+    #define _DEFAULT &tog DEFAULT
 
     #define _LAYER_0_LAYER_1 &lt_tog DEFAULT CODE
 
@@ -125,14 +126,14 @@
      &mo FN  &none   _KEYPAD    &none     &none                            &kp BSPC    &kp DEL   &kp END             &kp PG_DN  &kp ENTER  &kp SPACE     &trans      &trans     &trans         &trans     &mo FN
             >;
         };
-
+qwertttqwertt
         layer_keypad {
             bindings = <
-   &kp F1       &kp F2    &kp F3    &kp F4     &kp F5  &kp F6              &trans                                                                &mo MOD &kp F7        &kp F8        &kp F9         &kp F10       &kp F11         &kp F12
-   &kp TAB      &kp Q     &kp W     &kp E      &kp R   &kp T               _KEYPAD                                                               &none   &kp KP_PLUS   &kp KP_N7     &kp KP_N8      &kp KP_N9     &kp KP_DIVIDE   &kp BSLH
-   &kp ESC      &kp A     &kp S     &kp D      &kp F   &kp G               &none  &kp LCTRL  &kp LALT                   &kp LGUI  &kp RCTRL      &none   &kp KP_MINUS  &kp KP_N4     &kp KP_N5      &kp KP_N6     &kp KP_EQUAL    &kp ENTER
- &kp LSHFT      &kp Z     &kp X     &kp C      &kp V   &kp B                                 &kp HOME                  &kp PG_UP                         &kp KP_N0     &kp KP_N1     &kp KP_N2      &kp KP_N3     &kp KP_MULTIPLY &kp RSHFT
-     &mo FN  &kp GRAVE  _KEYPAD  &kp LEFT  &kp RIGHT                    &kp BSPC    &kp DEL   &kp END                  &kp PG_DN  &kp ENTER  &kp SPACE                 &kp KP_DOT    &kp KP_N0      &kp COMMA     &none            &mo FN
+   &kp F1       &kp F2    &kp F3    &kp F4     &kp F5  &kp F6             &trans                                                                &mo MOD &kp F7        &kp F8        &kp F9         &kp F10       &kp F11         &kp F12
+   &trans      &trans    &trans    &trans     &trans  &trans              _DEFAULT                                                              &none   &kp KP_PLUS   &kp KP_N7     &kp KP_N8      &kp KP_N9     &kp KP_DIVIDE   &kp BSLH
+   &trans      &trans    &trans    &trans     &trans  &trans              &none   &kp LCTRL  &kp LALT                  &kp LGUI  &kp RCTRL      &none   &kp KP_MINUS  &kp KP_N4     &kp KP_N5      &kp KP_N6     &kp KP_EQUAL    &kp ENTER
+   &trans      &trans    &trans    &trans     &trans  &trans                                 &kp HOME                  &kp PG_UP                        &kp KP_N0     &kp KP_N1     &kp KP_N2      &kp KP_N3     &kp KP_MULTIPLY &kp RSHFT
+   &mo FN      &kp GRAVE  _KEYPAD  &kp LEFT  &kp RIGHT                    &kp BSPC    &kp DEL   &kp END                   &kp PG_DN  &kp ENTER  &kp SPACE                &kp KP_DOT    &kp KP_N0      &kp COMMA     &none            &mo FN
             >;
         };
 
