@@ -73,13 +73,13 @@
 
     // Home row mods
     #define _A_CTL &hm_l LCTRL A  // Shift on pinkey fingers
-    #define _O_CTL &hm_r RCTRL O
-    #define _R_CMD &hm_l LGUI R   // Command on ring fingers
-    #define _I_CMD &hm_r RGUI I
-    #define _S_OPT &hm_l LALT S   // Option on middle finger
-    #define _E_OPT &hm_r RALT E
-    #define _T_SFT &hm_l RSHFT T  // Control on index finger
-    #define _N_SFT &hm_r RSHFT N
+    #define _P_CTL &hm_r RCTRL  P
+    #define _S_CMD &hm_l LGUI S   // Command on ring fingers
+    #define _L_CMD &hm_r RGUI L
+    #define _D_OPT &hm_l LALT D   // Option on middle finger
+    #define _K_OPT &hm_r RALT K
+    #define _F_SFT &hm_l RSHFT F  // Control on index finger
+    #define _J_SFT &hm_r RSHFT J
 
     #define _LBKT_CTL &hm_l LCTRL LBKT  // Shift on pinkey fingers
     #define _RIGHT_CTL &hm_r RCTRL RIGHT
@@ -109,9 +109,9 @@
         default_layer {
             bindings = <
  &kp EQUAL  &kp EXCL  &kp AT_SIGN  &kp POUND  &kp DLLR  &kp PERCENT     &tog CODE                                                                 &mo MOD  &kp CARET  &kp AMPS &kp STAR &kp LPAR    &kp RPAR  &kp MINUS
-   &kp ESC   &kp Q     &kp W     &kp F      &kp P   &kp G           &mo KEYPAD                                                                 &mo KEYPAD  &kp J   &kp L   &kp U     &kp Y  &kp SEMI   &kp BSLH
-   &kp RSHFT   _A_CTL    _R_CMD  _S_OPT  _T_SFT   _D_LAYER_1        &mo CODE       &kp LGUI   &kp LCTRL                   &kp RALT   &kp RGUI      &mo CODE   _H_LAYER_1   _N_SFT      _E_OPT     _I_CMD     _O_CTL    &kp SQT
- &kp TAB      &kp Z     &kp X     &kp C      &kp V   &kp B                                 &kp HOME                   &kp PG_UP                         &kp K   &kp M  &kp COMMA   &kp DOT  &kp FSLH  &kp RSHFT
+   &kp ESC   &kp Q     &kp W     &kp E      &kp R   &kp T           &mo KEYPAD                                                                 &mo KEYPAD  &kp Y   &kp U   &kp I     &kp O  &kp SEMI   &kp BSLH
+   &kp TAB   _A_CTL    _S_CMD  _D_OPT  _F_SFT   _G_LAYER_1        &mo CODE       &kp LGUI   &kp LCTRL                   &kp RALT   &kp RGUI      &mo CODE   _H_LAYER_1   _J_SFT      _K_OPT     _L_CMD     _P_CTL    &kp SQT
+ &kp RSHFT      &kp Z     &kp X     &kp C      &kp V   &kp B                                 &kp HOME                   &kp PG_UP                         &kp N   &kp M  &kp COMMA   &kp DOT  &kp FSLH  &kp RSHFT
      &none  &kp GRAVE  &to KEYPAD  &kp LEFT  &kp RIGHT                    &kp BSPC   &kp DEL  &kp END                 &kp PG_DN  &kp ENTER  &kp SPACE          &kp UP   &kp DOWN  &kp LBKT  &kp RBKT      &none
             >;
         };
