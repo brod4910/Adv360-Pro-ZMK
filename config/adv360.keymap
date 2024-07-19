@@ -33,8 +33,8 @@
           compatible = "zmk,behavior-hold-tap";
           label = "HOMEROW_MODS";
           #binding-cells = <2>;
-          tapping-term-ms = <250>;
-          quick_tap_ms = <200>;
+          tapping-term-ms = <150>;
+          quick_tap_ms = <-1>;
           flavor = "tap-preferred";
           bindings = <&kp>, <&kp>;
         };
@@ -43,8 +43,8 @@
           compatible = "zmk,behavior-hold-tap";
           label = "HOMEROW_MODS";
           #binding-cells = <2>;
-          tapping-term-ms = <250>;
-          quick_tap_ms = <200>;
+          tapping-term-ms = <150>;
+          quick_tap_ms = <-1>;
           flavor = "tap-preferred";
           bindings = <&kp>, <&kp>;
         };
@@ -53,8 +53,8 @@
           compatible = "zmk,behavior-hold-tap";
           label = "LAYERTAP";
           #binding-cells = <2>;
-          tapping-term-ms = <250>;
-          quick_tap_ms = <200>;
+          tapping-term-ms = <150>;
+          quick_tap_ms = <-1>;
           flavor = "tap-preferred";
           bindings = <&tog>, <&kp>;
         };
@@ -91,16 +91,18 @@
     #define _LEFT_SFT &hm_r RSHFT LEFT
 
     #define _G_LAYER_1 &lt_kp CODE G
-    #define _KP_LAYER_0 &lt_kp CODE KP_MINUS
-
     #define _H_LAYER_1 &lt_kp CODE H
-    #define _UNDER_LAYER_0 &lt_kp CODE UNDER
+
+    #define _E_LAYER_2 &lt_kp KEYPAD E
+    #define _I_LAYER_2 $lt_kp KEYPAD I
+
+    #define _N8_LAYER_0 &lt_kp KEYPAD KP_N8
+    #define _AMPS_LAYER_0 &lt_kp KEYPAD AMPS
+
+    #define _KP_LAYER_0 &lt_kp CODE KP_MINUS
 
     #define _KEYPAD &tog KEYPAD
     #define _DEFAULT &tog DEFAULT
-
-    #define _LAYER_0_LAYER_1 &lt_tog DEFAULT CODE
-
 
     keymap {
         compatible = "zmk,keymap";
@@ -109,10 +111,10 @@
         default_layer {
             bindings = <
  &kp EQUAL  &kp EXCL  &kp AT_SIGN  &kp POUND  &kp DLLR  &kp PERCENT     &tog CODE                                                                 &mo MOD  &kp CARET  &kp AMPS &kp STAR &kp LPAR    &kp RPAR  &kp MINUS
-   &kp ESC   &kp Q     &kp W     &kp E      &kp R   &kp T           &mo KEYPAD                                                                 &mo KEYPAD  &kp Y   &kp U   &kp I     &kp O  &kp SEMI   &kp BSLH
+   &kp ESC   &kp Q     &kp W     _E_LAYER_2   &kp R   &kp T           &mo KEYPAD                                                                 &mo KEYPAD  &kp Y   &kp U   _I_LAYER_2  &kp O  &kp SEMI   &kp BSLH
    &kp TAB   _A_CTL    _S_CMD  _D_OPT  _F_SFT   _G_LAYER_1        &mo CODE       &kp LGUI   &kp LCTRL                   &kp RALT   &kp RGUI      &mo CODE   _H_LAYER_1   _J_SFT      _K_OPT     _L_CMD     _P_CTL    &kp SQT
  &kp RSHFT      &kp Z     &kp X     &kp C      &kp V   &kp B                                 &kp HOME                   &kp PG_UP                         &kp N   &kp M  &kp COMMA   &kp DOT  &kp FSLH  &kp RSHFT
-     &none  &kp GRAVE  &to KEYPAD  &kp LEFT  &kp RIGHT                    &kp BSPC   &kp DEL  &kp END                 &kp PG_DN  &kp ENTER  &kp SPACE          &kp UP   &kp DOWN  &kp LBKT  &kp RBKT      &none
+     &none  &kp GRAVE  &none  &kp LEFT  &kp RIGHT                    &kp BSPC   &kp DEL  &kp END                 &kp PG_DN  &kp ENTER  &kp SPACE          &kp UP   &kp DOWN  &kp LBKT  &kp RBKT      &none
             >;
         };
 
@@ -120,19 +122,19 @@
             bindings = <
     &trans   &trans   &trans   &trans    &trans    &trans                &trans                                                               &mo MOD   &trans         &trans     &trans      &trans     &trans         &trans 
    &trans   &trans  &kp LBKT  &kp AMPS   &kp RBKT   &kp KP_PLUS          &trans                                                               &trans     &kp KP_PLUS    &kp LBKT   &kp AMPS    &kp RBKT   &trans         &trans 
-   &trans   &kp KP_EQUAL   &kp LPAR   &kp COLON  &kp RPAR  _KP_LAYER_0   &mo DEFAULT       &kp LCTRL   &kp LALT            &kp LGUI   &kp RCTRL     &mo DEFAULT     &kp KP_MINUS   &kp LPAR   &kp COLON   &kp RPAR   &kp KP_EQUAL   &trans
-    &trans   &kp EXCL   &kp LBRC   &kp PIPE    &kp RBRC    &kp POUND                             &kp HOME            &kp PG_UP                          &kp POUND      &kp LBRC   &kp PIPE    &kp RBRC   &kp EXCL       &trans
-     &none  &none   &to KEYPAD    &none     &none                            &kp BSPC    &kp DEL   &kp END             &kp PG_DN  &kp ENTER  &kp SPACE                   &trans     &trans      &trans     &trans         &none
+   &trans   &kp KP_EQUAL   &kp LPAR   &kp COLON  &kp RPAR  _KP_LAYER_0   &mo DEFAULT       &kp LCTRL   &kp LALT    kp LGUI   &kp RCTRL        &mo DEFAULT  _KP_LAYER_0   &kp LPAR   &kp COLON   &kp RPAR   &kp KP_EQUAL   &trans
+    &trans   &kp EXCL   &kp LBRC   &kp PIPE    &kp RBRC    &kp POUND                             &kp HOME          &kp PG_UP                               &kp POUND      &kp LBRC   &kp PIPE    &kp RBRC   &kp EXCL       &trans
+     &none  &trans   &none    &trans    &trans                            &kp BSPC    &kp DEL   &kp END             &kp PG_DN  &kp ENTER  &kp SPACE                   &trans     &trans      &trans     &trans         &none
             >;
         };
 
         layer_keypad {
             bindings = <
    &kp F1       &kp F2    &kp F3    &kp F4     &kp F5  &kp F6             &trans                                                                &mo MOD &kp F7        &kp F8        &kp F9         &kp F10       &kp F11         &kp F12
-   &trans      &trans    &trans    &trans     &trans  &trans              &to DEFAULT                                                              &to DEFAULT   &kp KP_PLUS   &kp KP_N7     &kp KP_N8      &kp KP_N9     &kp KP_DIVIDE   &kp BSLH
+   &trans      &trans    &trans  _AMPS_LAYER_0 &trans  &trans              &to DEFAULT                                                              &to DEFAULT   &kp KP_PLUS   &kp KP_N7     _N8_LAYER_0      &kp KP_N9     &kp KP_DIVIDE   &kp BSLH
    &trans      &trans    &trans    &trans     &trans  &trans              &to CODE   &kp LCTRL  &kp LALT                  &kp LGUI  &kp RCTRL      &to CODE   &kp KP_MINUS  &kp KP_N4     &kp KP_N5      &kp KP_N6     &kp KP_EQUAL    &kp ENTER
    &trans      &trans    &trans    &trans     &trans  &trans                                 &kp HOME                  &kp PG_UP                        &kp KP_N0     &kp KP_N1     &kp KP_N2      &kp KP_N3     &kp KP_MULTIPLY &kp RSHFT
-   &none       &kp GRAVE  &none  &kp LEFT  &kp RIGHT                    &kp BSPC    &kp DEL   &kp END                   &kp PG_DN  &kp ENTER  &kp SPACE                &kp KP_DOT    &kp KP_N0      &kp COMMA     &none            &kp LNLCK
+   &none       &trans  &none  &trans  &trans                    &kp BSPC    &kp DEL   &kp END                   &kp PG_DN  &kp ENTER  &kp SPACE                &kp KP_DOT    &kp KP_N0      &kp COMMA     &none            &kp LNLCK
             >;
         };
 
