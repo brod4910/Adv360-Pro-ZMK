@@ -118,7 +118,7 @@
             bindings = <
     &trans   &trans   &trans   &trans    &trans    &trans                &trans                                                               &mo MOD   &trans         &trans     &trans      &trans     &trans         &trans 
    &trans   &trans  &kp LBKT  &kp AMPS   &kp RBKT   &kp KP_PLUS          &trans                                                               &trans     &kp KP_PLUS    &kp LBKT   &kp AMPS    &kp RBKT   &trans         &trans 
-   &trans   &kp KP_EQUAL   &kp LPAR   &kp COLON  &kp RPAR  _KP_LAYER_0   &mo DEFAULT       &kp LCTRL   &kp LALT    kp LGUI   &kp RCTRL        &mo DEFAULT  _KP_LAYER_0   &kp LPAR   &kp COLON   &kp RPAR   &kp KP_EQUAL   &trans
+   &trans   &kp KP_EQUAL   &kp LPAR   &kp COLON  &kp RPAR  _KP_LAYER_0   &mo DEFAULT       &kp LCTRL   &kp LALT    &kp LGUI   &kp RCTRL        &mo DEFAULT  _KP_LAYER_0   &kp LPAR   &kp COLON   &kp RPAR   &kp KP_EQUAL   &trans
     &trans   &kp EXCL   &kp LBRC   &kp PIPE    &kp RBRC    &kp POUND                             &kp HOME          &kp PG_UP                               &kp POUND      &kp LBRC   &kp PIPE    &kp RBRC   &kp EXCL       &trans
      &none  &trans   &none    &trans    &trans                            &kp BSPC    &kp DEL   &kp END             &kp PG_DN  &kp ENTER  &kp SPACE                   &trans     &trans      &trans     &trans         &none
             >;
