@@ -130,7 +130,7 @@
    &trans      &trans    &kp LBKT _AMPS_LAYER_0 &kp RBKT   &kp KP_PLUS    &to DEFAULT                                                              &to DEFAULT   &kp KP_PLUS   &kp KP_N7     _N8_LAYER_0      &kp KP_N9     &kp KP_DIVIDE   &kp BSLH
    &trans      &kp KP_EQUAL  &kp LPAR   &kp COLON  &kp RPAR  &kp KP_EQUAL &to CODE   &kp LCTRL  &kp LALT                  &kp LGUI  &kp RCTRL      &to CODE   &kp KP_MINUS  &kp KP_N4     &kp KP_N5      &kp KP_N6     &kp KP_EQUAL    &kp ENTER
    &trans      &kp EXCL   &kp LBRC   &kp PIPE    &kp RBRC    &kp POUND               &kp HOME                             &kp PG_UP                          &kp COMMA     &kp KP_N1     &kp KP_N2      &kp KP_N3     &kp KP_MULTIPLY &kp RSHFT
-   &none       &trans  &none  &trans  &trans                    &kp BSPC    &kp DEL   &kp END                             &kp PG_DN  &kp ENTER  &kp SPACE         &kp KP_DOT    &kp KP_N0      &kp KP_DOT     &none         &kp LNLCK
+   &none       &trans  &none  &trans  &trans                    &kp BSPC    &kp DEL   &kp END                             &kp PG_DN  &kp ENTER  &kp SPACE         &kp UP    &kp KP_N0      &kp DOWN     &none         &kp LNLCK
             >;
         };
 
